@@ -1,140 +1,93 @@
-# 🌍 Air Quality Index (AQI) Prediction using Machine Learning
+# Air Quality Index (AQI) Prediction
 
-## 📌 Project Overview
+A Python machine-learning project for exploring air-quality data and predicting AQI using regression models. The repository includes a Jupyter notebook for analysis and a Streamlit app for interactive experiments.
 
-This project predicts **Air Quality Index (AQI)** values using Machine Learning algorithms based on environmental pollutant data.
+## Features
 
-The model is trained using the `city_day.csv` dataset and deployed with **Streamlit** to provide an interactive web interface for AQI prediction.
+- Load and inspect city-level air-quality data
+- Clean rows with missing values for the selected model features
+- Choose a city or use all available cities
+- Select pollutant features and a train/test split
+- Train and compare Linear Regression, K-Nearest Neighbors, Decision Tree, and Random Forest regressors
+- Review evaluation metrics including MAE, MSE, and R²
+- Explore the data through a Streamlit dashboard
 
----
-
-## 🚀 Features
-
-- Data preprocessing and cleaning
-- Exploratory Data Analysis (EDA)
-- Multiple regression algorithms
-- Model performance comparison
-- Interactive Streamlit frontend
-- Real-time AQI prediction
-
----
-
-## 🧠 Machine Learning Algorithms Used
-
-- Linear Regression
-- K-Nearest Neighbors (KNN) Regressor
-- Decision Tree Regressor
-- Random Forest Regressor
-
----
-
-## 📂 Dataset
-
-Dataset Used: `city_day.csv`
-
-Features include:
-- PM2.5
-- PM10
-- NO2
-- SO2
-- CO
-- O3
-- Temperature
-- Humidity
-- Wind Speed
-- AQI (Target Variable)
-
----
-
-## 🛠️ Technologies Used
+## Tech stack
 
 - Python
-- Pandas
-- NumPy
+- Pandas and NumPy
 - Matplotlib
-- Scikit-learn
+- scikit-learn
 - Streamlit
+- Jupyter Notebook
 
----
+## Project files
 
-## 📊 Model Evaluation Metrics
+- `app.py` — interactive Streamlit dashboard
+- `AIR_QUALITY_PREDECTION.ipynb` — notebook for the analysis and modelling workflow
+- `1772272102861_city_day.csv` — dataset used by the app (if included in this repository)
+- `requirements.txt` — Python dependencies
 
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- R² Score
+## Run locally
 
----
-
-## 📁 Project Structure
-
-```
-AQI-PREDECTION/
-│
-├── AIR_QUALITY_PREDECTION.ipynb
-├── app.py
-├── city_day.csv
-├── requirements.txt
-└── README.md
-```
-
----
-
-## ▶️ How to Run the Project
-
-### 1️⃣ Install Dependencies
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/surya-prasad-mallik/AQI-AI-training-Project.git
+cd AQI-AI-training-Project
+```
+
+### 2. Create and activate a virtual environment
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+macOS/Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Run Streamlit App
+### 4. Start the dashboard
 
 ```bash
 streamlit run app.py
 ```
 
-Then open:
+Open the local URL printed by Streamlit (usually http://localhost:8501).
 
-```
-http://localhost:8501
-```
+The app expects the dataset file named `1772272102861_city_day.csv` in the project root. If it is missing, the app offers a CSV upload option. Use a compatible dataset containing an `AQI` target column and the pollutant columns you want to select.
 
----
+## Modelling workflow
 
-## ⚙️ Workflow
+1. Load the dataset and choose a city.
+2. Select pollutant columns as input features.
+3. Drop rows missing the selected features or the AQI target.
+4. Choose a regression algorithm and its available hyperparameters.
+5. Train and review the evaluation metrics.
 
-1. Load dataset (`city_day.csv`)
-2. Data preprocessing
-3. Train/Test split
-4. Train multiple ML models
-5. Evaluate models
-6. Deploy with Streamlit
-7. Predict AQI based on user inputs
+## Evaluation
 
----
+The app displays Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² for the selected train/test split. Results depend on the dataset, chosen features, model settings, and split; run the app to obtain the metrics rather than assuming a model is best in advance.
 
-## 📈 Future Improvements
+## Notes
 
-- Add XGBoost / Gradient Boosting
-- Deploy to cloud (Render / AWS)
-- Add AQI category classification
-- Improve UI/UX design
+- This is an educational project, not a source of official health or emergency guidance.
+- Predictions depend on the quality and coverage of the input data.
+- Dataset attribution and usage terms should be retained alongside the dataset if you redistribute it.
 
----
+## Author
 
-## 🎯 Learning Outcomes
-
-- End-to-end Machine Learning pipeline
-- Regression model implementation
-- Model evaluation techniques
-- Streamlit deployment
-- Real-world environmental data analysis
-
----
-
-## 👨‍💻 Author
-
-Your's Truly
-TEAM LOW ELO  
-B.Tech – AI & Data Science  
-Machine Learning Enthusiast'S
+**Surya Prasad Mallik**
